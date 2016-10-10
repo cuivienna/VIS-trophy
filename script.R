@@ -1,15 +1,16 @@
 require(pacman)
-pacman::p_load(igraph,network,plyr,utils, rgl)
+pacman::p_load(igraph,plyr, rgl)
 
 # load our csv; for an online version of the data see https://docs.google.com/spreadsheets/d/1R2CqmUzsBFD7PwC4Mk3GROozNjGDa8gEo0ySUoL-9To/edit#gid=1935061396
 visdata <- read.csv("vis.csv")
 
 # vip holds an array with the persons of interest for whom we want to create a co-authorship network; the names have to be indicated exactly as in the "Deduped author names" column in the csv file; 
 
-vip <- "[:print:]*?(Lucas, P|Roth, S.F|Kolojejchick, J|Senn, J.A|Gomberg, C.C|Burks, M.B|Stroffolino, P.J|Dunmire, C)[:print:]*?"
+#vip <- "[:print:]*?(Lucas, P|Roth, S.F|Kolojejchick, J|Senn, J.A|Gomberg, C.C|Burks, M.B|Stroffolino, P.J|Dunmire, C)[:print:]*?"
 
 # example for a larger network
 #vip <- "[:print:]*?(Munzner, T|Heer, J|Stasko, J)[:print:]*?"
+vip <- "[:print:]*?(Fekete, J|Dragicevic, P|Isenberg, P|Isenberg,T)[:print:]*?"
 
 
 # filter based on the vip expression
